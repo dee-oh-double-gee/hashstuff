@@ -22,11 +22,13 @@ Try {
 Write-Host "Attempting to combine all valid hashes into one large Hashcat hccapx file"`n
 Get-Content -encoding Byte -path $hccapxfolder\*.hccapx | Set-Content -Encoding Byte $hccapxfolder\multi-$(get-date -f yyyy-MM-dd).hccapx
 Write-Host "Merged all valid (p)cap files into $hccapxfolder\multi-$(get-date -f yyyy-MM-dd).hccapx"
+Write-Host "multi-$(get-date -f yyyy-MM-dd).hccapx can now be used with hashcat:"
+Write-Host ".\hashcat64.exe -m 2500 $hccapxfolder\multi-$(get-date -f yyyy-MM-dd).hccapx BIGWORDLISTHERE.txt"
 }
 Catch {
 
    Write-Host $_.Exception.Message -ForegroundColor Red
-   Write-Host "This could mean that a multi-$(get-date -f yyyy-MM-dd).hccapx file has already been created today." -ForegroundColor Red -BackgroundColor Yellow
+   Write-Host "This could mean that a multi-$(get-date -f yyyy-MM-dd).hccapx file has already been created today." -ForegroundColor Red
    Write-Host "Please delete or move the old file and then run this script again" -ForegroundColor Red
-   Write-Host "Or you could modify the script to use a different method when combining hccapx files" -ForegroundColor Red -BackgroundColor Yellow
+   Write-Host "Or you could modify the script to use a different method when combining hccapx files" -ForegroundColor Red
 }
