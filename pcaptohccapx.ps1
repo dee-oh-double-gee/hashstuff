@@ -2,8 +2,8 @@
 ## Download the hashcat-utitls here https://github.com/hashcat/hashcat-utils/releases
 ## Change these three variables to match your folders and files
  
-$pcapfolder = "C:\Users\User\Documents\hands"
-$hccapxfolder = "C:\Users\User\Documents\handsconverted"
+$pcapfolder = "C:\Users\User\Documents\handshakes"
+$hccapxfolder = "C:\Users\User\Documents\handshakesconverted"
 $cap2location = "C:\path_to_cap2hccapx\hashcat-utils-1.9\hashcat-utils-1.9\bin\cap2hccapx.exe"
 
 
